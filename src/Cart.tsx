@@ -23,7 +23,7 @@ export default function Cart({cart, removeFromCart, deleteCart}) {
       {Object.keys(cart).length!==0
       ?
 
-      <form action={BACKEND_URL + "api/checkout"} method="POST">
+      <form action={BACKEND_URL + "/api/checkout"} method="POST">
         {createInputTags()}
         <button type="submit">Check Out</button>
       </form>

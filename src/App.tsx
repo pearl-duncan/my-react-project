@@ -74,10 +74,12 @@ const logout = () => {
     }
   };
 
-  const removeFromCart = (item) => {
+  const removeFromCart = (item_id) => {
     const copy = {...cart}
-    copy[item.id].qty = 0
-
+    copy[item_id].qty --
+    if (copy[item_id].qty === 0) {
+      delete copy[item_id]
+    }
     setCart(copy)
     if (user){
       updateCartDB(copy)
